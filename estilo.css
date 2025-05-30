@@ -1,0 +1,149 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #f5f3ef;
+  color: #013265;
+}
+
+.cabecalho {
+  background-color: #f5f3ef;
+  color: #013265;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 2px;
+}
+
+.destaque, .entrega, .sobre {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f5f3ef;
+}
+
+.produtos {
+  padding: 55px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.lista-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.produto {
+  border: 1px solid #000000;
+  padding: 15px;
+  border-radius: 25px;
+  background: #b8e9f9;
+  width: 175px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.1);
+}
+
+.produto .preco {
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.produto h4 {
+  font-size: 1.2em;
+  margin-bottom: 100px;
+  color: #1e3a8a;
+}
+
+.produto p {
+  margin: 5px 0;
+  color: #000000;
+}
+
+.produto:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+
+}
+
+
+.botao-whats {
+  display: inline-block;  
+  margin-top: 5px;
+  padding: 8px 10px;
+  background: #56bfe8;
+  color: #1e3a8a;
+  font-size: 1.2em;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.botao-whats:hover {
+  background: #40fe7c;
+}
+
+.botao-comprar {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 10px;
+  background: #f9f4ec;
+  color: #1e3a8a;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 1.0em;
+  border: 2px solid #000000;
+}
+
+.botao-comprar:hover {
+  background: #f5f3ef;
+  color: #37d66a;
+  border: 2px solid #37d66a;
+}
+
+.logo-produtoP {
+  width: 100px;
+  height: 150px;
+  border-radius: 2%;
+  margin-bottom: 8px;
+  display: block;
+  margin-left: 25px;
+  transform: translateY(-50px);
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.logo-produtoM {
+  width: 100px;
+  height: 150px;
+  border-radius: 0%;
+  margin-bottom: 8px;
+  display: block;
+  margin: 0 auto 8px auto;
+  transform: translateY(-50px);
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.logo-produtoG {
+  width: 100px;
+  height: 150px;
+  border-radius: 0%;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: 25px;
+  transform: translateY(-50px);
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.rodape {
+  background-color: #f5f3ef;
+  color: #013265;
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: 40px;
+}
