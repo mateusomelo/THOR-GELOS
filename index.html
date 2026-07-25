@@ -98,10 +98,11 @@
   <section class="hero" id="inicio">
     <div class="hero-bg">
       <div class="hero-overlay"></div>
-      <div class="ice-shard shard-1" data-parallax="0.15"></div>
-      <div class="ice-shard shard-2" data-parallax="0.3"></div>
-      <div class="ice-shard shard-3" data-parallax="0.2"></div>
-      <div class="ice-shard shard-4" data-parallax="0.1"></div>
+      <img src="assets/thor-cube-coco.png" alt="" class="hero-cube cube-coco" data-parallax="0.15" />
+      <img src="assets/thor-cube-melancia.png" alt="" class="hero-cube cube-melancia" data-parallax="0.3" />
+      <img src="assets/thor-cube-maca.png" alt="" class="hero-cube cube-maca" data-parallax="0.2" />
+      <img src="assets/thor-cube-maracuja.png" alt="" class="hero-cube cube-maracuja" data-parallax="0.1" />
+      <img src="assets/thor-cube-morango.png" alt="" class="hero-cube cube-morango" data-parallax="0.25" />
       <div class="hero-glow"></div>
     </div>
 
@@ -212,7 +213,7 @@
       </div>
 
       <div class="produtos-bulk reveal" data-reveal="up">
-        <i data-lucide="rocket"></i>
+        <span class="bulk-icon"><i data-lucide="rocket"></i></span>
         <p>Acima de <strong>70 unidades</strong>, cada gelo sai por <strong>R$ 1,00</strong> — preço direto de fábrica.</p>
       </div>
     </div>
@@ -301,7 +302,7 @@
 
       <div class="contato-grid">
         <a href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" class="contato-card glass reveal" data-reveal="up">
-          <span class="contato-icon"><i data-lucide="instagram"></i></span>
+          <span class="contato-icon"><i data-lucide="camera"></i></span>
           <h4>Instagram Oficial</h4>
           <p>@thor.gelos</p>
           <span class="btn btn-outline btn-sm">Seguir no Instagram</span>
@@ -403,7 +404,7 @@
       <span class="modal-head-icon"><i data-lucide="clipboard-list"></i></span>
       <h3>Solicitar Orçamento</h3>
     </div>
-    <p class="modal-intro">Preencha seus dados e escolha o sabor. Vamos te chamar no WhatsApp para fechar o pedido.</p>
+    <p class="modal-intro">Preencha seus dados e escolha o(s) sabor(es). Vamos te chamar no WhatsApp para fechar o pedido.</p>
 
     <form id="orcamentoForm" novalidate>
       <div class="form-group">
@@ -411,22 +412,35 @@
         <input type="text" id="orcamentoNome" name="nome" placeholder="Seu nome completo" required />
       </div>
 
-      <div class="form-group">
-        <label for="orcamentoSabor">Sabor *</label>
-        <select id="orcamentoSabor" name="sabor" required>
-          <option value="" disabled selected>Selecione um sabor</option>
-          <option value="Gelo Sabor Coco">🥥 Gelo Sabor Coco</option>
-          <option value="Gelo Sabor Melancia">🍉 Gelo Sabor Melancia</option>
-          <option value="Gelo Sabor Maçã Verde">🍏 Gelo Sabor Maçã Verde</option>
-          <option value="Gelo Sabor Maracujá">🟡 Gelo Sabor Maracujá</option>
-          <option value="Gelo Sabor Morango">🍓 Gelo Sabor Morango</option>
-        </select>
+      <div class="orcamento-itens" id="orcamentoItens">
+        <div class="orcamento-item">
+          <div class="form-group">
+            <label>Sabor *</label>
+            <select class="item-sabor" required>
+              <option value="" disabled selected>Selecione um sabor</option>
+              <option value="Gelo Sabor Coco">🥥 Gelo Sabor Coco</option>
+              <option value="Gelo Sabor Melancia">🍉 Gelo Sabor Melancia</option>
+              <option value="Gelo Sabor Maçã Verde">🍏 Gelo Sabor Maçã Verde</option>
+              <option value="Gelo Sabor Maracujá">🟡 Gelo Sabor Maracujá</option>
+              <option value="Gelo Sabor Morango">🍓 Gelo Sabor Morango</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Quantidade *</label>
+            <input type="number" class="item-quantidade" placeholder="Ex: 50" min="1" step="1" required />
+          </div>
+          <button type="button" class="item-remove" aria-label="Remover sabor" hidden><i data-lucide="trash-2"></i></button>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="orcamentoQuantidade">Quantidade *</label>
-        <input type="number" id="orcamentoQuantidade" name="quantidade" placeholder="Ex: 50" min="1" step="1" required />
-        <span class="form-hint">Acima de 70 un., cada gelo sai por R$ 1,00</span>
+      <button type="button" class="btn-add-sabor" id="orcamentoAddSabor"><i data-lucide="plus"></i> Adicionar outro sabor</button>
+
+      <div class="orcamento-total" id="orcamentoTotal">
+        <div class="orcamento-total-label">
+          <span>Total estimado</span>
+          <small id="orcamentoTotalHint">Preencha a quantidade</small>
+        </div>
+        <strong id="orcamentoTotalValor">R$ 0,00</strong>
       </div>
 
       <button type="submit" class="btn btn-primary btn-lg ripple modal-submit">Enviar Pedido</button>

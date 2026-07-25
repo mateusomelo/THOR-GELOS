@@ -82,13 +82,75 @@
 
   // ---------- Orçamento modal ----------
   const WHATSAPP_NUMBERS = { primary: '5511985996532', alt: '5511987207700' };
+  const UNIT_PRICE = 1.20;
+  const BULK_UNIT_PRICE = 1.00;
+  const BULK_THRESHOLD = 70;
+
   const orcamentoModal = document.getElementById('orcamentoModal');
   const orcamentoClose = document.getElementById('orcamentoClose');
   const orcamentoForm = document.getElementById('orcamentoForm');
   const orcamentoNome = document.getElementById('orcamentoNome');
-  const orcamentoSabor = document.getElementById('orcamentoSabor');
-  const orcamentoQuantidade = document.getElementById('orcamentoQuantidade');
+  const orcamentoItens = document.getElementById('orcamentoItens');
+  const orcamentoAddSabor = document.getElementById('orcamentoAddSabor');
+  const orcamentoTotalValor = document.getElementById('orcamentoTotalValor');
+  const orcamentoTotalHint = document.getElementById('orcamentoTotalHint');
   const orcamentoAlt = document.getElementById('orcamentoAlt');
+
+  const formatBRL = (value) => `R$ ${value.toFixed(2).replace('.', ',')}`;
+
+  const getItemRows = () => Array.from(orcamentoItens.querySelectorAll('.orcamento-item'));
+
+  const recalcOrcamentoTotal = () => {
+    const totalQty = getItemRows().reduce((sum, row) => {
+      const qty = parseInt(row.querySelector('.item-quantidade').value, 10);
+      return sum + (Number.isFinite(qty) && qty > 0 ? qty : 0);
+    }, 0);
+
+    if (totalQty <= 0) {
+      orcamentoTotalValor.textContent = formatBRL(0);
+      orcamentoTotalHint.textContent = 'Preencha a quantidade';
+      return;
+    }
+
+    const unitPrice = totalQty > BULK_THRESHOLD ? BULK_UNIT_PRICE : UNIT_PRICE;
+    const total = totalQty * unitPrice;
+    orcamentoTotalValor.textContent = formatBRL(total);
+    orcamentoTotalHint.textContent = totalQty > BULK_THRESHOLD
+      ? `${totalQty} un. × ${formatBRL(unitPrice)} (preço por volume)`
+      : `${totalQty} un. × ${formatBRL(unitPrice)}`;
+  };
+
+  const addOrcamentoItem = () => {
+    const template = orcamentoItens.querySelector('.orcamento-item');
+    const row = template.cloneNode(true);
+    row.querySelector('.item-sabor').selectedIndex = 0;
+    row.querySelector('.item-quantidade').value = '';
+    row.querySelector('.item-remove').hidden = false;
+    orcamentoItens.appendChild(row);
+    if (window.lucide) window.lucide.createIcons();
+    recalcOrcamentoTotal();
+    row.querySelector('.item-sabor').focus();
+  };
+
+  orcamentoAddSabor.addEventListener('click', addOrcamentoItem);
+
+  orcamentoItens.addEventListener('click', (e) => {
+    const removeBtn = e.target.closest('.item-remove');
+    if (!removeBtn || removeBtn.hidden) return;
+    removeBtn.closest('.orcamento-item').remove();
+    recalcOrcamentoTotal();
+  });
+
+  orcamentoItens.addEventListener('input', (e) => {
+    if (e.target.classList.contains('item-quantidade')) recalcOrcamentoTotal();
+  });
+
+  const resetOrcamentoForm = () => {
+    getItemRows().slice(1).forEach((row) => row.remove());
+    orcamentoForm.reset();
+    orcamentoForm.querySelectorAll('.is-touched').forEach((el) => el.classList.remove('is-touched'));
+    recalcOrcamentoTotal();
+  };
 
   const openOrcamentoModal = () => {
     orcamentoModal.classList.add('is-open');
@@ -98,6 +160,7 @@
   const closeOrcamentoModal = () => {
     orcamentoModal.classList.remove('is-open');
     orcamentoModal.setAttribute('aria-hidden', 'true');
+    resetOrcamentoForm();
   };
 
   document.querySelectorAll('[data-open-modal="orcamento"]').forEach((trigger) => {
@@ -113,16 +176,26 @@
 
   const buildOrcamentoMessage = () => {
     const nome = orcamentoNome.value.trim();
-    const sabor = orcamentoSabor.value;
-    const quantidade = orcamentoQuantidade.value;
-    return `Olá! Meu nome é ${nome}. Quero fazer um pedido de ${quantidade} unidades de gelo saborizado: ${sabor}.`;
+    const rows = getItemRows();
+    const totalQty = rows.reduce((sum, row) => sum + (parseInt(row.querySelector('.item-quantidade').value, 10) || 0), 0);
+    const unitPrice = totalQty > BULK_THRESHOLD ? BULK_UNIT_PRICE : UNIT_PRICE;
+    const total = totalQty * unitPrice;
+
+    const itensTexto = rows
+      .map((row) => {
+        const sabor = row.querySelector('.item-sabor').value;
+        const qty = row.querySelector('.item-quantidade').value;
+        return `- ${sabor}: ${qty} un.`;
+      })
+      .join('\n');
+
+    return `Olá! Meu nome é ${nome}. Quero fazer um pedido de gelo saborizado:\n${itensTexto}\nTotal: ${totalQty} unidades — ${formatBRL(total)}`;
   };
 
   const isOrcamentoFormValid = () => {
     const valid = orcamentoForm.checkValidity();
     orcamentoNome.classList.add('is-touched');
-    orcamentoSabor.classList.add('is-touched');
-    orcamentoQuantidade.classList.add('is-touched');
+    orcamentoForm.querySelectorAll('.item-sabor, .item-quantidade').forEach((el) => el.classList.add('is-touched'));
     if (!valid) orcamentoForm.reportValidity();
     return valid;
   };
