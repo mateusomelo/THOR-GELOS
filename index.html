@@ -167,6 +167,7 @@
           <ul class="tag-list">
             <li>Drinks</li><li>Coquetéis</li><li>Bares</li>
           </ul>
+          <span class="produto-preco">R$ 1,20 <small>/ un</small></span>
         </article>
 
         <article class="card produto-card reveal" data-reveal="up" style="--delay:0.1s">
@@ -176,14 +177,43 @@
           <ul class="tag-list">
             <li>Eventos</li><li>Verão</li><li>Cardápios</li>
           </ul>
+          <span class="produto-preco">R$ 1,20 <small>/ un</small></span>
         </article>
 
-        <article class="card produto-card produto-card-future reveal" data-reveal="up" style="--delay:0.2s">
-          <div class="card-icon icon-future"><i data-lucide="sparkles"></i></div>
-          <h3>Novos Sabores</h3>
-          <p>Layout preparado para expansão futura do portfólio. Em breve, novos sabores THOR GELOS.</p>
-          <span class="badge-soon">Em breve</span>
+        <article class="card produto-card reveal" data-reveal="up" style="--delay:0.2s">
+          <div class="card-icon icon-maca"><i data-lucide="leaf"></i></div>
+          <h3>Gelo Sabor Maçã Verde</h3>
+          <p>Azedinho na medida certa, uma opção refrescante e diferente para o seu cardápio.</p>
+          <ul class="tag-list">
+            <li>Drinks</li><li>Cardápios</li><li>Verão</li>
+          </ul>
+          <span class="produto-preco">R$ 1,20 <small>/ un</small></span>
         </article>
+
+        <article class="card produto-card reveal" data-reveal="up" style="--delay:0.3s">
+          <div class="card-icon icon-maracuja"><i data-lucide="citrus"></i></div>
+          <h3>Gelo Sabor Maracujá</h3>
+          <p>Sabor exótico e irresistível, ideal para drinks autorais e cardápios diferenciados.</p>
+          <ul class="tag-list">
+            <li>Drinks</li><li>Coquetéis</li><li>Eventos</li>
+          </ul>
+          <span class="produto-preco">R$ 1,20 <small>/ un</small></span>
+        </article>
+
+        <article class="card produto-card reveal" data-reveal="up" style="--delay:0.4s">
+          <div class="card-icon icon-morango"><i data-lucide="heart"></i></div>
+          <h3>Gelo Sabor Morango</h3>
+          <p>O sabor que todo mundo ama, perfeito para festas, delivery e conveniências.</p>
+          <ul class="tag-list">
+            <li>Festas</li><li>Delivery</li><li>Conveniências</li>
+          </ul>
+          <span class="produto-preco">R$ 1,20 <small>/ un</small></span>
+        </article>
+      </div>
+
+      <div class="produtos-bulk reveal" data-reveal="up">
+        <i data-lucide="rocket"></i>
+        <p>Acima de <strong>70 unidades</strong>, cada gelo sai por <strong>R$ 1,00</strong> — preço direto de fábrica.</p>
       </div>
     </div>
   </section>
@@ -387,7 +417,16 @@
           <option value="" disabled selected>Selecione um sabor</option>
           <option value="Gelo Sabor Coco">🥥 Gelo Sabor Coco</option>
           <option value="Gelo Sabor Melancia">🍉 Gelo Sabor Melancia</option>
+          <option value="Gelo Sabor Maçã Verde">🍏 Gelo Sabor Maçã Verde</option>
+          <option value="Gelo Sabor Maracujá">🟡 Gelo Sabor Maracujá</option>
+          <option value="Gelo Sabor Morango">🍓 Gelo Sabor Morango</option>
         </select>
+      </div>
+
+      <div class="form-group">
+        <label for="orcamentoQuantidade">Quantidade *</label>
+        <input type="number" id="orcamentoQuantidade" name="quantidade" placeholder="Ex: 50" min="1" step="1" required />
+        <span class="form-hint">Acima de 70 un., cada gelo sai por R$ 1,00</span>
       </div>
 
       <button type="submit" class="btn btn-primary btn-lg ripple modal-submit">Enviar Pedido</button>

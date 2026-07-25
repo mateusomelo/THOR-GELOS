@@ -87,6 +87,7 @@
   const orcamentoForm = document.getElementById('orcamentoForm');
   const orcamentoNome = document.getElementById('orcamentoNome');
   const orcamentoSabor = document.getElementById('orcamentoSabor');
+  const orcamentoQuantidade = document.getElementById('orcamentoQuantidade');
   const orcamentoAlt = document.getElementById('orcamentoAlt');
 
   const openOrcamentoModal = () => {
@@ -113,13 +114,15 @@
   const buildOrcamentoMessage = () => {
     const nome = orcamentoNome.value.trim();
     const sabor = orcamentoSabor.value;
-    return `Olá! Meu nome é ${nome}. Quero fazer um pedido de gelo saborizado: ${sabor}.`;
+    const quantidade = orcamentoQuantidade.value;
+    return `Olá! Meu nome é ${nome}. Quero fazer um pedido de ${quantidade} unidades de gelo saborizado: ${sabor}.`;
   };
 
   const isOrcamentoFormValid = () => {
     const valid = orcamentoForm.checkValidity();
     orcamentoNome.classList.add('is-touched');
     orcamentoSabor.classList.add('is-touched');
+    orcamentoQuantidade.classList.add('is-touched');
     if (!valid) orcamentoForm.reportValidity();
     return valid;
   };
