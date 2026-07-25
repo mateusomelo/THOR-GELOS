@@ -80,36 +80,6 @@
     });
   });
 
-  // ---------- Gallery lightbox ----------
-  const lightbox = document.getElementById('lightbox');
-  const lightboxIcon = document.getElementById('lightboxIcon');
-  const lightboxTitle = document.getElementById('lightboxTitle');
-  const lightboxDesc = document.getElementById('lightboxDesc');
-  const lightboxClose = document.getElementById('lightboxClose');
-
-  document.querySelectorAll('.masonry-item').forEach((item) => {
-    item.addEventListener('click', () => {
-      lightboxIcon.innerHTML = `<i data-lucide="${item.dataset.icon || 'snowflake'}"></i>`;
-      if (window.lucide) window.lucide.createIcons();
-      lightboxTitle.textContent = item.dataset.title || '';
-      lightboxDesc.textContent = item.dataset.desc || '';
-      lightbox.classList.add('is-open');
-      lightbox.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-  };
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-
   // ---------- Orçamento modal ----------
   const WHATSAPP_NUMBERS = { primary: '5511985996532', alt: '5511987207700' };
   const orcamentoModal = document.getElementById('orcamentoModal');
