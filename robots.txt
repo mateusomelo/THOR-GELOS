@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mateusomelo.github.io/THOR-GELOS/sitemap.xml
