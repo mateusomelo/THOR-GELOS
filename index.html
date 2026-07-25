@@ -90,7 +90,7 @@
       <a href="#contato" class="nav-link">Contato</a>
     </nav>
 
-    <a href="#contato" class="btn btn-primary btn-header">🧊 Solicitar Orçamento</a>
+    <button type="button" class="btn btn-primary btn-header" data-open-modal="orcamento">🧊 Solicitar Orçamento</button>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -116,7 +116,7 @@
       <h1 class="hero-title">FORÇA TOTAL PARA<br /><span class="text-neon">REFRESCAR</span> SEU NEGÓCIO.</h1>
       <p class="hero-subtitle">Fabricamos gelo tradicional e gelo saborizado com alta qualidade, direto da fábrica para você.</p>
       <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary btn-lg ripple">🧊 Solicitar Orçamento</a>
+        <button type="button" class="btn btn-primary btn-lg ripple" data-open-modal="orcamento">🧊 Solicitar Orçamento</button>
         <a href="https://wa.me/5511985996532?text=Ol%C3%A1%2C%20quero%20solicitar%20um%20or%C3%A7amento%20THOR%20GELOS" target="_blank" rel="noopener" class="btn btn-outline btn-lg ripple">📲 Falar no WhatsApp</a>
       </div>
     </div>
@@ -172,7 +172,7 @@
 
       <div class="cards-grid produtos-grid">
         <article class="card produto-card reveal" data-reveal="up">
-          <div class="card-icon icon-blue">🧊</div>
+          <div class="card-icon icon-blue"><i data-lucide="snowflake"></i></div>
           <h3>Gelo Tradicional</h3>
           <p>Cristalino, puro e resistente. Ideal para festas, eventos, restaurantes, bares, delivery e conveniências.</p>
           <ul class="tag-list">
@@ -181,7 +181,7 @@
         </article>
 
         <article class="card produto-card reveal" data-reveal="up" style="--delay:0.1s">
-          <div class="card-icon icon-coco">🥥</div>
+          <div class="card-icon icon-coco"><i data-lucide="palmtree"></i></div>
           <h3>Gelo Sabor Coco</h3>
           <p>Sabor tropical intenso que transforma qualquer bebida em uma experiência premium, direto da fábrica.</p>
           <ul class="tag-list">
@@ -190,7 +190,7 @@
         </article>
 
         <article class="card produto-card reveal" data-reveal="up" style="--delay:0.2s">
-          <div class="card-icon icon-melancia">🍉</div>
+          <div class="card-icon icon-melancia"><i data-lucide="sun"></i></div>
           <h3>Gelo Sabor Melancia</h3>
           <p>Refrescância e sabor natural em cada cubo, perfeito para eventos de verão e cardápios diferenciados.</p>
           <ul class="tag-list">
@@ -199,7 +199,7 @@
         </article>
 
         <article class="card produto-card produto-card-future reveal" data-reveal="up" style="--delay:0.3s">
-          <div class="card-icon icon-future">🍋</div>
+          <div class="card-icon icon-future"><i data-lucide="sparkles"></i></div>
           <h3>Novos Sabores</h3>
           <p>Layout preparado para expansão futura do portfólio. Em breve, novos sabores THOR GELOS.</p>
           <span class="badge-soon">Em breve</span>
@@ -217,14 +217,14 @@
       </div>
 
       <div class="cards-grid diferenciais-grid">
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0s"><span class="diff-icon">⚡</span><h4>Produção Industrial</h4><p>Capacidade para atender grande demanda com consistência.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.05s"><span class="diff-icon">🧊</span><h4>Alta Qualidade</h4><p>Gelo cristalino, puro e produzido com rigor técnico.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.1s"><span class="diff-icon">🏭</span><h4>Direto da Fábrica</h4><p>Sem intermediários: preço justo e produto sempre fresco.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.15s"><span class="diff-icon">🚚</span><h4>Entrega Rápida</h4><p>Logística ágil para o seu negócio nunca ficar sem estoque.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.2s"><span class="diff-icon">💰</span><h4>Custo-benefício</h4><p>Preço competitivo sem abrir mão da qualidade.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.25s"><span class="diff-icon">❄️</span><h4>Sempre Conservado</h4><p>Cadeia de frio controlada do início ao fim.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.3s"><span class="diff-icon">📦</span><h4>Embalagens Resistentes</h4><p>Sacos reforçados que preservam o produto até o destino.</p></div>
-        <div class="diff-card reveal" data-reveal="up" style="--delay:0.35s"><span class="diff-icon">⭐</span><h4>Atendimento Personalizado</h4><p>Suporte próximo para pedidos recorrentes ou avulsos.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0s"><span class="diff-icon"><i data-lucide="zap"></i></span><h4>Produção Industrial</h4><p>Capacidade para atender grande demanda com consistência.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.05s"><span class="diff-icon"><i data-lucide="gem"></i></span><h4>Alta Qualidade</h4><p>Gelo cristalino, puro e produzido com rigor técnico.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.1s"><span class="diff-icon"><i data-lucide="factory"></i></span><h4>Direto da Fábrica</h4><p>Sem intermediários: preço justo e produto sempre fresco.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.15s"><span class="diff-icon"><i data-lucide="truck"></i></span><h4>Entrega Rápida</h4><p>Logística ágil para o seu negócio nunca ficar sem estoque.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.2s"><span class="diff-icon"><i data-lucide="badge-dollar-sign"></i></span><h4>Custo-benefício</h4><p>Preço competitivo sem abrir mão da qualidade.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.25s"><span class="diff-icon"><i data-lucide="thermometer-snowflake"></i></span><h4>Sempre Conservado</h4><p>Cadeia de frio controlada do início ao fim.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.3s"><span class="diff-icon"><i data-lucide="package"></i></span><h4>Embalagens Resistentes</h4><p>Sacos reforçados que preservam o produto até o destino.</p></div>
+        <div class="diff-card reveal" data-reveal="up" style="--delay:0.35s"><span class="diff-icon"><i data-lucide="star"></i></span><h4>Atendimento Personalizado</h4><p>Suporte próximo para pedidos recorrentes ou avulsos.</p></div>
       </div>
     </div>
   </section>
@@ -239,23 +239,23 @@
       </div>
 
       <div class="masonry" id="masonry">
-        <div class="masonry-item tall" data-title="Cubos de Gelo" data-desc="Gelo cristalino produzido com rigor técnico." data-icon="🧊" style="--hue:200"></div>
-        <div class="masonry-item" data-title="Sacos de Gelo" data-desc="Embalagens resistentes prontas para entrega." data-icon="📦" style="--hue:205"></div>
-        <div class="masonry-item" data-title="Gelo Sabor Coco" data-desc="Sabor tropical direto da fábrica." data-icon="🥥" style="--hue:190"></div>
-        <div class="masonry-item tall" data-title="Bebidas Geladas" data-desc="Refrescância garantida em cada copo." data-icon="🥤" style="--hue:198"></div>
-        <div class="masonry-item" data-title="Gelo Sabor Melancia" data-desc="Frescor natural para eventos de verão." data-icon="🍉" style="--hue:350"></div>
-        <div class="masonry-item" data-title="Freezers Industriais" data-desc="Armazenagem em temperatura controlada." data-icon="❄️" style="--hue:202"></div>
-        <div class="masonry-item tall" data-title="Produção Industrial" data-desc="Estrutura de fábrica em escala." data-icon="🏭" style="--hue:210"></div>
-        <div class="masonry-item" data-title="Caminhão de Entrega" data-desc="Logística ágil para todo o negócio." data-icon="🚚" style="--hue:206"></div>
-        <div class="masonry-item" data-title="Embalagens" data-desc="Resistência e higiene em cada saco." data-icon="📦" style="--hue:195"></div>
-        <div class="masonry-item" data-title="Produtos Refrigerados" data-desc="Cadeia de frio do início ao fim." data-icon="🧊" style="--hue:203"></div>
+        <div class="masonry-item tall" data-title="Cubos de Gelo" data-desc="Gelo cristalino produzido com rigor técnico." data-icon="snowflake" style="--hue:200"><i class="masonry-icon" data-lucide="snowflake"></i></div>
+        <div class="masonry-item" data-title="Sacos de Gelo" data-desc="Embalagens resistentes prontas para entrega." data-icon="package" style="--hue:205"><i class="masonry-icon" data-lucide="package"></i></div>
+        <div class="masonry-item" data-title="Gelo Sabor Coco" data-desc="Sabor tropical direto da fábrica." data-icon="palmtree" style="--hue:190"><i class="masonry-icon" data-lucide="palmtree"></i></div>
+        <div class="masonry-item tall" data-title="Bebidas Geladas" data-desc="Refrescância garantida em cada copo." data-icon="cup-soda" style="--hue:198"><i class="masonry-icon" data-lucide="cup-soda"></i></div>
+        <div class="masonry-item" data-title="Gelo Sabor Melancia" data-desc="Frescor natural para eventos de verão." data-icon="sun" style="--hue:350"><i class="masonry-icon" data-lucide="sun"></i></div>
+        <div class="masonry-item" data-title="Freezers Industriais" data-desc="Armazenagem em temperatura controlada." data-icon="thermometer-snowflake" style="--hue:202"><i class="masonry-icon" data-lucide="thermometer-snowflake"></i></div>
+        <div class="masonry-item tall" data-title="Produção Industrial" data-desc="Estrutura de fábrica em escala." data-icon="factory" style="--hue:210"><i class="masonry-icon" data-lucide="factory"></i></div>
+        <div class="masonry-item" data-title="Caminhão de Entrega" data-desc="Logística ágil para todo o negócio." data-icon="truck" style="--hue:206"><i class="masonry-icon" data-lucide="truck"></i></div>
+        <div class="masonry-item" data-title="Embalagens" data-desc="Resistência e higiene em cada saco." data-icon="package" style="--hue:195"><i class="masonry-icon" data-lucide="package"></i></div>
+        <div class="masonry-item" data-title="Produtos Refrigerados" data-desc="Cadeia de frio do início ao fim." data-icon="snowflake" style="--hue:203"><i class="masonry-icon" data-lucide="snowflake"></i></div>
       </div>
     </div>
   </section>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar"><i data-lucide="x"></i></button>
     <div class="lightbox-content">
       <div class="lightbox-icon" id="lightboxIcon"></div>
       <h3 id="lightboxTitle"></h3>
@@ -274,25 +274,25 @@
       <div class="processo-flow">
         <div class="processo-step reveal" data-reveal="up">
           <div class="processo-num">1</div>
-          <span class="processo-icon">🏭</span>
+          <span class="processo-icon"><i data-lucide="factory"></i></span>
           <h4>Produção</h4>
           <p>Fabricação industrial em larga escala com água tratada e processos controlados.</p>
         </div>
         <div class="processo-step reveal" data-reveal="up" style="--delay:0.1s">
           <div class="processo-num">2</div>
-          <span class="processo-icon">🔬</span>
+          <span class="processo-icon"><i data-lucide="flask-conical"></i></span>
           <h4>Controle de Qualidade</h4>
           <p>Verificação de pureza, formato e consistência antes da embalagem.</p>
         </div>
         <div class="processo-step reveal" data-reveal="up" style="--delay:0.2s">
           <div class="processo-num">3</div>
-          <span class="processo-icon">📦</span>
+          <span class="processo-icon"><i data-lucide="package"></i></span>
           <h4>Embalagem</h4>
           <p>Sacos resistentes que preservam a qualidade até o destino final.</p>
         </div>
         <div class="processo-step reveal" data-reveal="up" style="--delay:0.3s">
           <div class="processo-num">4</div>
-          <span class="processo-icon">🚚</span>
+          <span class="processo-icon"><i data-lucide="truck"></i></span>
           <h4>Entrega</h4>
           <p>Logística ágil e cadeia de frio mantida do início ao fim.</p>
         </div>
@@ -308,7 +308,7 @@
       <h2>Leve mais qualidade para o seu negócio.</h2>
       <p>Solicite um orçamento e descubra a qualidade dos produtos THOR GELOS.</p>
       <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary btn-lg ripple">🧊 Solicitar Orçamento</a>
+        <button type="button" class="btn btn-primary btn-lg ripple" data-open-modal="orcamento">🧊 Solicitar Orçamento</button>
         <a href="https://wa.me/5511985996532?text=Ol%C3%A1%2C%20quero%20solicitar%20um%20or%C3%A7amento%20THOR%20GELOS" target="_blank" rel="noopener" class="btn btn-outline btn-lg ripple">📲 WhatsApp</a>
       </div>
     </div>
@@ -325,28 +325,31 @@
 
       <div class="contato-grid">
         <a href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" class="contato-card glass reveal" data-reveal="up">
-          <span class="contato-icon">📷</span>
+          <span class="contato-icon"><i data-lucide="instagram"></i></span>
           <h4>Instagram Oficial</h4>
           <p>@thor.gelos</p>
           <span class="btn btn-outline btn-sm">Seguir no Instagram</span>
         </a>
 
-        <a href="https://wa.me/5511985996532?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20THOR%20GELOS" target="_blank" rel="noopener" class="contato-card glass reveal" data-reveal="up" style="--delay:0.1s">
-          <span class="contato-icon">📲</span>
+        <div class="contato-card glass reveal" data-reveal="up" style="--delay:0.1s">
+          <span class="contato-icon"><i data-lucide="message-circle"></i></span>
           <h4>WhatsApp</h4>
-          <p>(11) 98599-6532</p>
-          <span class="btn btn-outline btn-sm">Chamar no WhatsApp</span>
-        </a>
+          <p>Fale por qualquer uma das linhas</p>
+          <div class="contato-whats-actions">
+            <a href="https://wa.me/5511985996532?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20THOR%20GELOS" target="_blank" rel="noopener" class="btn btn-outline btn-sm">(11) 98599-6532</a>
+            <a href="https://wa.me/5511987207700?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20THOR%20GELOS" target="_blank" rel="noopener" class="btn btn-outline btn-sm">(11) 98720-7700</a>
+          </div>
+        </div>
 
         <div class="contato-card glass reveal" data-reveal="up" style="--delay:0.2s">
-          <span class="contato-icon">📧</span>
+          <span class="contato-icon"><i data-lucide="mail"></i></span>
           <h4>E-mail</h4>
           <p><a href="mailto:contato@thorgelos.com.br" class="contato-link">contato@thorgelos.com.br</a></p>
           <span class="contato-note">[e-mail preparado para edição]</span>
         </div>
 
         <div class="contato-card glass reveal" data-reveal="up" style="--delay:0.3s">
-          <span class="contato-icon">📍</span>
+          <span class="contato-icon"><i data-lucide="map-pin"></i></span>
           <h4>Endereço</h4>
           <p>São Paulo — SP</p>
           <span class="contato-note">[endereço completo a definir]</span>
@@ -365,12 +368,12 @@
       </div>
 
       <div class="social-feed reveal" data-reveal="up">
-        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:200">🧊</a>
-        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:195">🥥</a>
-        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:350">🍉</a>
-        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:205">🏭</a>
-        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:210">🚚</a>
-        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:198">🥤</a>
+        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:200"><i data-lucide="snowflake"></i></a>
+        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:195"><i data-lucide="palmtree"></i></a>
+        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:350"><i data-lucide="sun"></i></a>
+        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:205"><i data-lucide="factory"></i></a>
+        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:210"><i data-lucide="truck"></i></a>
+        <a class="social-tile" href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener" style="--hue:198"><i data-lucide="cup-soda"></i></a>
       </div>
 
       <div class="social-cta reveal" data-reveal="up">
@@ -405,7 +408,8 @@
     <div class="footer-col">
       <h5>Redes</h5>
       <a href="https://www.instagram.com/thor.gelos/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://wa.me/5511985996532" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/5511985996532" target="_blank" rel="noopener">WhatsApp (11) 98599-6532</a>
+      <a href="https://wa.me/5511987207700" target="_blank" rel="noopener">WhatsApp (11) 98720-7700</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -413,8 +417,44 @@
   </div>
 </footer>
 
-<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo"><i data-lucide="arrow-up"></i></button>
 
+<!-- MODAL SOLICITAR ORÇAMENTO -->
+<div class="modal" id="orcamentoModal" aria-hidden="true">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="orcamentoClose" aria-label="Fechar"><i data-lucide="x"></i></button>
+    <div class="modal-head">
+      <span class="modal-head-icon"><i data-lucide="clipboard-list"></i></span>
+      <h3>Solicitar Orçamento</h3>
+    </div>
+    <p class="modal-intro">Preencha seus dados e escolha o sabor. Vamos te chamar no WhatsApp para fechar o pedido.</p>
+
+    <form id="orcamentoForm" novalidate>
+      <div class="form-group">
+        <label for="orcamentoNome">Nome *</label>
+        <input type="text" id="orcamentoNome" name="nome" placeholder="Seu nome completo" required />
+      </div>
+
+      <div class="form-group">
+        <label for="orcamentoSabor">Sabor *</label>
+        <select id="orcamentoSabor" name="sabor" required>
+          <option value="" disabled selected>Selecione um sabor</option>
+          <option value="Gelo Sabor Coco">🥥 Gelo Sabor Coco</option>
+          <option value="Gelo Sabor Melancia">🍉 Gelo Sabor Melancia</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg ripple modal-submit">Enviar Pedido</button>
+
+      <div class="modal-alt-contact">
+        <span>Enviar pelo outro WhatsApp:</span>
+        <button type="button" class="modal-alt-link" id="orcamentoAlt">(11) 98720-7700</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

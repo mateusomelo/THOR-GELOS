@@ -1,6 +1,9 @@
 (() => {
   'use strict';
 
+  // ---------- Icons ----------
+  if (window.lucide) window.lucide.createIcons();
+
   // ---------- Loader ----------
   window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
@@ -86,7 +89,8 @@
 
   document.querySelectorAll('.masonry-item').forEach((item) => {
     item.addEventListener('click', () => {
-      lightboxIcon.textContent = item.dataset.icon || '🧊';
+      lightboxIcon.innerHTML = `<i data-lucide="${item.dataset.icon || 'snowflake'}"></i>`;
+      if (window.lucide) window.lucide.createIcons();
       lightboxTitle.textContent = item.dataset.title || '';
       lightboxDesc.textContent = item.dataset.desc || '';
       lightbox.classList.add('is-open');
@@ -104,6 +108,65 @@
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
+  });
+
+  // ---------- Orçamento modal ----------
+  const WHATSAPP_NUMBERS = { primary: '5511985996532', alt: '5511987207700' };
+  const orcamentoModal = document.getElementById('orcamentoModal');
+  const orcamentoClose = document.getElementById('orcamentoClose');
+  const orcamentoForm = document.getElementById('orcamentoForm');
+  const orcamentoNome = document.getElementById('orcamentoNome');
+  const orcamentoSabor = document.getElementById('orcamentoSabor');
+  const orcamentoAlt = document.getElementById('orcamentoAlt');
+
+  const openOrcamentoModal = () => {
+    orcamentoModal.classList.add('is-open');
+    orcamentoModal.setAttribute('aria-hidden', 'false');
+    orcamentoNome.focus();
+  };
+  const closeOrcamentoModal = () => {
+    orcamentoModal.classList.remove('is-open');
+    orcamentoModal.setAttribute('aria-hidden', 'true');
+  };
+
+  document.querySelectorAll('[data-open-modal="orcamento"]').forEach((trigger) => {
+    trigger.addEventListener('click', openOrcamentoModal);
+  });
+  orcamentoClose.addEventListener('click', closeOrcamentoModal);
+  orcamentoModal.addEventListener('click', (e) => {
+    if (e.target === orcamentoModal) closeOrcamentoModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOrcamentoModal();
+  });
+
+  const buildOrcamentoMessage = () => {
+    const nome = orcamentoNome.value.trim();
+    const sabor = orcamentoSabor.value;
+    return `Olá! Meu nome é ${nome}. Quero fazer um pedido de gelo saborizado: ${sabor}.`;
+  };
+
+  const isOrcamentoFormValid = () => {
+    const valid = orcamentoForm.checkValidity();
+    orcamentoNome.classList.add('is-touched');
+    orcamentoSabor.classList.add('is-touched');
+    if (!valid) orcamentoForm.reportValidity();
+    return valid;
+  };
+
+  orcamentoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!isOrcamentoFormValid()) return;
+    const text = encodeURIComponent(buildOrcamentoMessage());
+    window.open(`https://wa.me/${WHATSAPP_NUMBERS.primary}?text=${text}`, '_blank', 'noopener');
+    closeOrcamentoModal();
+  });
+
+  orcamentoAlt.addEventListener('click', () => {
+    if (!isOrcamentoFormValid()) return;
+    const text = encodeURIComponent(buildOrcamentoMessage());
+    window.open(`https://wa.me/${WHATSAPP_NUMBERS.alt}?text=${text}`, '_blank', 'noopener');
+    closeOrcamentoModal();
   });
 
   // ---------- Back to top ----------
